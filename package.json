@@ -1,0 +1,20 @@
+{
+  "name": "sshare",
+  "version": "1.0.0",
+  "description": "Secret sharing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "secret",
+    "sharing"
+  ],
+  "author": "Roman Kalyakin <roman@kalyakin.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.3.10",
+    "node-forge": "^0.6.16",
+    "secrets.js": "^0.1.8"
+  }
+}
