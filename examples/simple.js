@@ -57,6 +57,10 @@ if(typeof module !== 'undefined' && module.exports) {
       el.innerHTML = 'Result message: ' + result;
       document.body.appendChild(el);
 
+      el = document.createElement('div');
+      el.innerHTML = 'Messages equal: ' + (orig === result);
+      document.body.appendChild(el);
+
       Object.keys(statuses).forEach(function(k) {
         el = document.createElement('div');
         el.innerHTML = k + ': ' + statuses[k] + ' ms.';
@@ -93,7 +97,7 @@ secrets.encryptWithPassword(privateKey, password,
       console.log(err.stack);
       console.error(err);
     } else {
-      console.log(chunks);
+      // console.log(chunks);
 
       s = new Date();
 
