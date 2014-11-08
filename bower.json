@@ -1,6 +1,6 @@
 {
   "name": "sshare",
-  "main": "index.js",
+  "main": ["./lib/secrets.js", "./lib/workflow.js"],
   "version": "0.0.1",
   "homepage": "https://github.com/theorm/sshare",
   "authors": [
