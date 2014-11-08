@@ -38,27 +38,27 @@ var publicKey =
 '-----END PUBLIC KEY-----';
 
 if(typeof module !== 'undefined' && module.exports) {
-  function notify(orig, result, statuses) {
+  function showResult(orig, res, statuses) {
     console.log('Original message: ', orig);
-    console.log('Reuslting message: ', result);
+    console.log('Reuslting message: ', res);
 
     Object.keys(statuses).forEach(function(k) {
       console.log(k + ': ', statuses[k]);
     });
   }
 } else {
-  function notify(orig, result, statuses) {
+  function showResult(orig, res, statuses) {
     document.addEventListener("DOMContentLoaded", function(event) {
       var el = document.createElement('div');
       el.innerHTML = 'Original message: ' + orig;
       document.body.appendChild(el);
 
       el = document.createElement('div');
-      el.innerHTML = 'Result message: ' + result;
+      el.innerHTML = 'Result message: ' + res;
       document.body.appendChild(el);
 
       el = document.createElement('div');
-      el.innerHTML = 'Messages equal: ' + (orig === result);
+      el.innerHTML = 'Messages equal: ' + (orig === res);
       document.body.appendChild(el);
 
       Object.keys(statuses).forEach(function(k) {
@@ -110,7 +110,8 @@ secrets.encryptWithPassword(privateKey, password,
           console.log(err.stack);
           console.error(err);
         }
-        notify(originalMessage, message, statuses);
+        console.log('EQ: ' + (message === originalMessage));
+        showResult(originalMessage, message, statuses);
       });
     }
   });
